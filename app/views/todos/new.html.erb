@@ -2,10 +2,10 @@
 <p>Find me in app/views/todos/new.html.erb</p>
 <%= form_for @todo, {url: '/todos/create'} do |f| %>
   <%= f.label :todo_title %>
-  <%= f.text_field :todo_title %>
+  <%= f.text_field :todo_title %><br />
 
   <%= f.label :todo_text %>
-  <%= f.text_field :todo_text %>
+  <%= f.text_field :todo_text %><br />
 
   <%= f.submit %>
 <% end %>
