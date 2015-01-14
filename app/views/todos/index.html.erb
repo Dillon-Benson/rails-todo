@@ -1,0 +1,6 @@
+<ul>
+  <% @todos.each do |todo| %>
+    <li><h2><b><%= todo.todo_title %></b></h2></li>
+    <p><%= todo.todo_text %></p>
+  <% end %>
+</ul>
