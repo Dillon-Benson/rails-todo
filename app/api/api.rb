@@ -4,5 +4,10 @@ class API < Grape::API
 
   resource :todos do
     mount Todos::All
+    mount Todos::Post
+  end
+
+  resource :sessions do
+    mount Sessions::Sessions
   end
 end

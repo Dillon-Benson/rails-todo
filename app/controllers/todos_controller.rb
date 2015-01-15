@@ -2,7 +2,7 @@ class TodosController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @todos = Todo.where(id: current_user.id)
+    @todos = current_user.todos.all
   end
 
   def new
