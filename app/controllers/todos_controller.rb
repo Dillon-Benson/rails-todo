@@ -10,10 +10,10 @@ class TodosController < ApplicationController
   end
 
   def view
-    unless @todo = current_user.todos.find_by(id: params[:id])
-      render :status => 404
+    @todo = current_user.todos.find_by(id: params[:id])
+    unless @todo
+      render file: "#{Rails.root}/public/404.html", layout: false, status: 404
     end
-    @todo
   end
 
   def create
