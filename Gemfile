@@ -34,6 +34,12 @@ gem "hashie_rails"
 
 gem 'will_paginate', '~> 3.0.6'
 
+gem 'twitter-bootstrap-rails'
+
+gem 'therubyracer', :require => 'v8'
+
+gem 'less-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
