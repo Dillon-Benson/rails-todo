@@ -2,7 +2,7 @@ class TodosController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @todos = current_user.todos.all.reverse
+    @todos = current_user.todos.all.paginate(:page => params[:page], :per_page => 5)
   end
 
   def new
