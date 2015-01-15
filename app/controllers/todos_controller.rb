@@ -9,6 +9,13 @@ class TodosController < ApplicationController
     @todo = Todo.new
   end
 
+  def view
+    unless @todo = current_user.todos.find_by(id: params[:id])
+      render :status => 404
+    end
+    @todo
+  end
+
   def create
     @todo = Todo.new(todo_params)
     @todo.user = current_user

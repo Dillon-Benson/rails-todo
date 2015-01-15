@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'todos/new'
 
+  get 'todos/:id' => 'todos#view'
+
   post 'todos/create' => 'todos#create'
 
   mount Todos::API => '/'
