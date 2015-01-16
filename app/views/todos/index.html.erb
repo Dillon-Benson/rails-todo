@@ -1,7 +1,7 @@
 <%= link_to 'New Todo', {action: 'new'} %><br />
 <ul>
   <% @todos.each do |todo| %>
-  <li><%= link_to todo.todo_title, {:action => 'view', :id => todo.id } %></li>
+  <li><h1><%= link_to todo.todo_title, {:action => 'view', :id => todo.id } %></h1></li>
     <p><%= todo.todo_text %></p>
   <% end %>
 </ul>
