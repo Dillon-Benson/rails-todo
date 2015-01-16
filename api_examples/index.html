@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <h1>Another website</h1>
+  <ul id="todos">
+  </ul>
+  <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+  <script>
+    var access_token;
+    $.ajax({
+      type: "POST",
+      url: 'http://localhost:3000/api/sessions/sessions',
+      data: {'email': 'dillon.benson93@gmail.com', 'password': '<abc123>'},
+      success: function(data) {
+        console.log(data);
+        access_token = JSON.parse(data).token;
+        console.log(access_token);
+      },
+      dataType: "JSON"
+    });
+
+    setTimeout(function() {
+      $.ajax({
+        type: "GET",
+        url: 'http://localhost:3000/api/todos/all?access_token=' + access_token,
+        success: function(data) {
+          console.log(data);
+          todos = JSON.parse(data);
+          for(i = 0; i < todos.length; i++) {
+            $('#todos').append('<li><h1>' + todos[i].todo_title + '</h1></li><p>' + todos[i].todo_text + '</p>');
+          }
+        },
+        dataType: "JSON"
+      });
+    }, 2000);    
+  </script>
+</body>
