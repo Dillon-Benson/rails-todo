@@ -34,3 +34,5 @@ Get /api/todos/get ---> Get a single Todo by Id
 ```shell
 curl http://127.0.0.1:3000/api/todos/get/?access_token=Ws6wcgDekFKpIGWZbiGyw3W2xHRx3_I9eF5OQg98cI0&id=1
 ```
+
+API examples are in the api_examples directory
